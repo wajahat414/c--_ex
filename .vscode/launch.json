@@ -1,19 +1,51 @@
 {
+    "version": "0.2.0",
     "configurations": [
-        
         {
-            "name": "C/C++: clang++ build and debug active file",
+            "name": "C/C++: clang++ Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${fileDirname}/${fileBasenameNoExtension}_debug",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++: clang++ build active file"
+            "preLaunchTask": "C/C++: clang++ build active file (Debug)"
+        },
+        {
+            "name": "C/C++: clang++ Debug ALL",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/main_debug",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "setupCommands": [
+            {
+                "description": "Enable pretty-printing for lldb",
+                "text": "settings set target.pretty-printing true",
+                "ignoreFailures": true
+            }
+            ],
+            "preLaunchTask": "C/C++: clang++ build all files (Debug)"
+        },
+        {
+            "name": "C/C++: clang++ Release",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}_release",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: clang++ build active file (Release)"
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
